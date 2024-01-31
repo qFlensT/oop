@@ -13,26 +13,25 @@ export enum PowerPlugType {
 }
 
 class PowerSocket {
+  //? Тип розетки
   socketType: PowerSocketType;
 
   constructor(socketType: PowerSocketType) {
     this.socketType = socketType;
   }
-
   //? Включение питания
-  powerOn(plugType: PowerPlugType): void | never {
+  powerOn(plugType: PowerPlugType): string | never {
     switch (plugType) {
       case PowerPlugType.EU:
-        if (this.socketType === PowerSocketType.EU) console.log("Power is ON");
+        if (this.socketType === PowerSocketType.EU) return "Power is ON";
         else throw new Error("Invalid plug type");
-        break;
       case PowerPlugType.US:
-        if (this.socketType === PowerSocketType.US) console.log("Power is ON");
+        if (this.socketType === PowerSocketType.US) return "Power is ON";
         else throw new Error("Invalid plug type");
-        break;
     }
   }
 }
 
 const powerSocket = new PowerSocket(PowerSocketType.EU);
-powerSocket.powerOn(PowerPlugType.EU);
+console.log(powerSocket.socketType);
+console.log(powerSocket.powerOn(PowerPlugType.EU));
