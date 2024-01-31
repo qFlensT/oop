@@ -1,0 +1,17 @@
+{
+  "type": "module",
+  "name": "oop_lection",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx tsc ${path} && node ./dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.11.10",
+    "tslib": "^2.6.2"
+  }
+}
